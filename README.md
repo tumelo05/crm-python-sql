@@ -1,50 +1,45 @@
-A production‑style CRM (Customer Relationship Management) backend built locally using Python, SQLite, and FastAPI.
-This project demonstrates end‑to‑end backend and data‑engineering fundamentals, including ETL pipelines, relational modeling, REST APIs, analytics, and schema migrations.
-The application manages:
+CRM Backend (Python, SQL & FastAPI)
+This project is a production‑style Customer Relationship Management (CRM) backend system built locally using Python, SQLite, and FastAPI.
+It demonstrates end‑to‑end backend and data‑engineering principles, from raw data ingestion to analytics exposed via REST APIs.
+The system manages Accounts (companies) and Contacts (people associated with companies) and supports both transactional operations and analytical insights.
 
-Accounts (companies)
-Contacts (people associated with companies)
-Relationships between them
-Analytical insights derived from the data
-
-
-  Architecture Overview
+Architecture Overview
 Raw CSV Data
    │
    ▼
 Python ETL (Cleaning & Validation)
    │
    ▼
-SQLite Database
-   ├── Transactional Tables (Accounts, Contacts)
+SQLite Relational Database
+   ├── Accounts & Contacts tables
    ├── Constraints & Indexes
-   ├── Analytics Views
+   ├── SQL Analytics Views
    │
    ▼
 FastAPI (REST API + Swagger UI)
 
-This mirrors how real CRM systems and data platforms are structured under managed solutions, but is implemented entirely locally to showcase full-stack understanding.
+This architecture mirrors how real CRM and analytics systems are implemented in production, with a clear separation between data preparation, storage, business logic, and analytics.
 
-  Key Features
-  Data Engineering
+Key Features
+Data Engineering
 
-CSV ingestion
-Data cleaning & normalization
-Deduplication
-Referential integrity between entities
+CSV data ingestion
+Data cleaning and normalization
+Deduplication and validation
+Curated datasets for downstream use
 
-  Relational Data Model
+Relational Data Model
 
 accounts and contacts tables
-Foreign key relationships
+Foreign‑key relationships
 Cascading deletes
-SQL constraints (NOT NULL, CHECK, UNIQUE)
-Indexes for performance
+Enforced constraints (NOT NULL, CHECK, UNIQUE)
+Indexes for query performance
 
-  API Layer (FastAPI)
+API Layer (FastAPI)
 
-Read and update endpoints for Accounts and Contacts
-Input validation with Pydantic
+RESTful endpoints with correct HTTP semantics
+Input validation using Pydantic
 Auto‑generated OpenAPI / Swagger documentation
 
 Core Endpoints
@@ -55,7 +50,7 @@ GET /accounts/{company_name}/contacts
 PUT /accounts/{company_name}
 PUT /contacts/{email}
 
-  Analytics
+Analytics
 Analytics are implemented as SQL views and exposed via API endpoints:
 
 Contacts per account
@@ -68,66 +63,52 @@ GET /analytics/contacts-per-account
 GET /analytics/accounts-by-industry
 GET /analytics/top-accounts-by-contacts
 
- Schema Hardening & Migration
 
-Enforced foreign keys
-Data validity constraints
-Indexes for join performance
-Idempotent schema migration handling dependent SQL views
-
-
-  Running the Project Locally
- - Install Dependencies
+Running the Project Locally
+1. Install Dependencies
 pip install -r requirements.txt
- - Clean and Load the Data
-python python/clean_data.pypython python/load_to_db.py
- - Apply Schema Hardening and Analytics
-Shellpython python/migrate_schema.pypython python/create_views.py
- - Start the API Server
-   uvicorn api.main:app --reloadS
-- Open Swagger UI
+2. Clean and Load the Data
+python3 python/clean_data.py python3 python/load_to_db.py
+3. Apply Schema Hardening and Analytics
+python3 python/migrate_schema.py python3 python/create_views.py
+4. Start the API Server
+uvicorn api.main:app --reload
+5. Open Swagger UI
 http://127.0.0.1:8000/docs
 
-This interface allows you to explore and test all API endpoints interactively.
+This interface allows interactive exploration and testing of all API endpoints.
 
-🧪 Example Use Cases
+Example Use Cases
 
-View all companies and their details
+View all customer accounts
 Update account or contact information
 Retrieve contacts associated with a specific company
 Analyze customer distribution by industry
-Identify companies with the largest number of contacts
+Identify top accounts by contact volume
 
 
-  Tech Stack
+Technology Stack
 
 Python
 SQLite
+SQL
 FastAPI
 Pandas
-SQL
 Pydantic
+Git & GitHub
 
 
- Why This Project
-This project was built to demonstrate:
+Why This Project
+This project was intentionally built without managed CRM platforms to demonstrate:
 
-Practical backend architecture
-SQL data modeling and migrations
-ETL pipeline design
+Backend system design
+Data modeling and schema evolution
+ETL pipelines and data validation
 REST API development
-Analytics layered on top of transactional systems
+Analytical query design
+End‑to‑end data‑engineering thinking
 
-It is intentionally implemented without managed services to highlight understanding of system internals.
+It reflects real‑world backend and data‑engineering workflows rather than framework‑heavy abstractions.
 
-Future Enhancements
-
-Pagination for large datasets
-Authentication & authorization
-Dockerized deployment
-Automated tests
-Frontend client
-
-
- Author
+Author
 Tumelo Sethosa
