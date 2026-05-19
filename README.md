@@ -1,58 +1,166 @@
-CRM Backend (Python, SQL & FastAPI)
+🚀 CRM Backend (Python, SQL & FastAPI)
 
-A production-style CRM backend that demonstrates end-to-end data engineering and backend development, from raw CSV ingestion to analytics served via REST APIs.
+A production-style CRM backend demonstrating end-to-end data engineering and backend development — from raw CSV ingestion to analytics served via REST APIs.
 
-Manages accounts (companies) and contacts (people) with both transactional operations and analytical insights.
+This system manages:
 
-Architecture
-CSV Data → Python ETL → SQLite → SQL Views → FastAPI API
-ETL layer: cleans, validates, and deduplicates raw data
-Database: relational schema with constraints and indexes
-Analytics: SQL views for aggregated insights
-API: FastAPI service with auto-documented endpoints
-Key Features
-Data ingestion and cleaning pipeline (Pandas + Python)
-Normalized relational schema with foreign keys and constraints
+Accounts (companies)
+Contacts (people)
+
+It supports both transactional operations and analytical insights.
+
+---
+
+📌 Overview
+
+This project showcases how to build a backend system from scratch without relying on external CRM tools.
+
+It covers:
+
+Data ingestion and cleaning (ETL)
+Relational database design
+SQL-based analytics
+REST API development
+
+---
+
+🏗️ Architecture
+CSV Data
+   ↓
+Python ETL (cleaning & validation)
+   ↓
+SQLite Database
+   ↓
+SQL Views (analytics layer)
+   ↓
+FastAPI REST API
+
+---
+
+⚙️ Tech Stack
+Python
+SQLite
+SQL
+FastAPI
+Pandas
+Pydantic
+
+---
+
+🔑 Key Features
+CSV ingestion and cleaning pipeline (Pandas + Python)
+Data validation and deduplication
+Normalized relational schema with:
+Foreign keys
+Constraints
 Indexed queries for performance
 REST API with input validation (Pydantic)
-Built-in analytics exposed via endpoints
-API Overview
-Core
+SQL-based analytics exposed via API endpoints
+
+---
+
+🗄️ Data Pipeline (ETL)
+
+The ETL layer:
+
+Loads raw CSV data
+Cleans inconsistent records
+Validates required fields
+Removes duplicates
+Prepares structured data for insertion
+```
+python3 python/clean_data.py
+python3 python/load_to_db.py
+```
+
+---
+🧱 Database Layer
+SQLite relational database
+Normalized schema for accounts and contacts
+Indexed columns for faster queries
+Schema evolution supported via migrations
+```
+python3 python/migrate_schema.py
+```
+---
+
+📊 Analytics Layer
+
+Analytics are implemented using SQL views.
+
+These provide:
+
+Aggregated insights
+Precomputed metrics
+Efficient querying for API consumption
+```
+python3 python/create_views.py
+```
+---
+
+🌐 API Layer (FastAPI)
+
+The API exposes both core CRM operations and analytics endpoints.
+
+▶️ Run the API
+```
+uvicorn api.main:app --reload
+```
+
+📄 Interactive Docs
+```
+http://127.0.0.1:8000/docs
+```
+---
+
+📡 API Endpoints
+🔹 Core Endpoints
+```
 GET    /accounts
 GET    /accounts/{company_name}
 GET    /accounts/{company_name}/contacts
 PUT    /accounts/{company_name}
 PUT    /contacts/{email}
-Analytics
-GET /analytics/contacts-per-account
-GET /analytics/accounts-by-industry
-GET /analytics/top-accounts-by-contacts
+```
+🔹 Analytics Endpoints
+```
+GET    /analytics/contacts-per-account
+GET    /analytics/accounts-by-industry
+GET    /analytics/top-accounts-by-contacts
+```
 
-Interactive docs available at:
-http://127.0.0.1:8000/docs
-
-Run Locally
+---
+🛠️ Run Locally
+1. Install dependencies
+```
 pip install -r requirements.txt
-
+```
+2. Run ETL pipeline
+```
 python3 python/clean_data.py
 python3 python/load_to_db.py
-
+```
+3. Apply migrations & create views
+```
 python3 python/migrate_schema.py
 python3 python/create_views.py
-
+```
+4. Start API
+```
 uvicorn api.main:app --reload
-Example Use Cases
+```
+
+---
+💡 Example Use Cases
 Retrieve and update customer data
-Explore company-contact relationships
+Explore company–contact relationships
 Analyze customer distribution by industry
 Identify high-value accounts by contact volume
-Tech Stack
 
-Python • SQLite • SQL • FastAPI • Pandas • Pydantic
+---
+🎯 Why This Matters
 
-Why This Matters
-
-This project shows practical skills in:
+This project demonstrates practical, real-world skills in:
 
 Backend system design
 Data modeling and schema evolution
@@ -60,8 +168,13 @@ ETL pipeline development
 REST API design
 SQL-based analytics
 
-Built without external CRM tools to reflect real-world engineering workflows.
-
-Author
+Built without external CRM tools to reflect real engineering workflows.
+---
+👤 Author
 
 Tumelo Sethosa
+
+---
+⭐ If you like this project
+
+Give it a star ⭐ on GitHub!
