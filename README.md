@@ -1,4 +1,4 @@
-#🚀 CRM Backend (Python, SQL & FastAPI)
+# 🚀 CRM Backend (Python, SQL & FastAPI)
 
 A production-style CRM backend demonstrating end-to-end data engineering and backend development — from raw CSV ingestion to analytics served via REST APIs.
 
@@ -11,7 +11,7 @@ It supports both transactional operations and analytical insights.
 
 ---
 
-#📌 Overview
+# 📌 Overview
 
 This project showcases how to build a backend system from scratch without relying on external CRM tools.
 
@@ -24,7 +24,7 @@ REST API development
 
 ---
 
-#🏗️ Architecture
+# 🏗️ Architecture
 CSV Data
    ↓
 Python ETL (cleaning & validation)
@@ -37,7 +37,7 @@ FastAPI REST API
 
 ---
 
-#⚙️ Tech Stack
+# ⚙️ Tech Stack
 Python
 SQLite
 SQL
@@ -47,7 +47,7 @@ Pydantic
 
 ---
 
-#🔑 Key Features
+# 🔑 Key Features
 CSV ingestion and cleaning pipeline (Pandas + Python)
 Data validation and deduplication
 Normalized relational schema with:
@@ -59,7 +59,7 @@ SQL-based analytics exposed via API endpoints
 
 ---
 
-#🗄️ Data Pipeline (ETL)
+# 🗄️ Data Pipeline (ETL)
 
 The ETL layer:
 
@@ -74,7 +74,7 @@ python3 python/load_to_db.py
 ```
 
 ---
-#🧱 Database Layer
+# 🧱 Database Layer
 SQLite relational database
 Normalized schema for accounts and contacts
 Indexed columns for faster queries
@@ -84,7 +84,7 @@ python3 python/migrate_schema.py
 ```
 ---
 
-#📊 Analytics Layer
+# 📊 Analytics Layer
 
 Analytics are implemented using SQL views.
 
@@ -98,7 +98,7 @@ python3 python/create_views.py
 ```
 ---
 
-#🌐 API Layer (FastAPI)
+# 🌐 API Layer (FastAPI)
 
 The API exposes both core CRM operations and analytics endpoints.
 
@@ -113,7 +113,7 @@ http://127.0.0.1:8000/docs
 ```
 ---
 
-#📡 API Endpoints
+# 📡 API Endpoints
 🔹 Core Endpoints
 ```
 GET    /accounts
@@ -130,7 +130,7 @@ GET    /analytics/top-accounts-by-contacts
 ```
 
 ---
-#🛠️ Run Locally
+# 🛠️ Run Locally
 1. Install dependencies
 ```
 pip install -r requirements.txt
@@ -151,14 +151,14 @@ uvicorn api.main:app --reload
 ```
 
 ---
-#💡 Example Use Cases
+# 💡 Example Use Cases
 Retrieve and update customer data
 Explore company–contact relationships
 Analyze customer distribution by industry
 Identify high-value accounts by contact volume
 
 ---
-#🎯 Why This Matters
+# 🎯 Why This Matters
 
 This project demonstrates practical, real-world skills in:
 
@@ -170,11 +170,11 @@ SQL-based analytics
 
 Built without external CRM tools to reflect real engineering workflows.
 ---
-#👤 Author
+# 👤 Author
 
-##Tumelo Sethosa
+## Tumelo Sethosa
 
 ---
 ⭐ If you like this project
 
-Give it a star ⭐ on GitHub!
+Give it a star ⭐
