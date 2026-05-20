@@ -11,7 +11,7 @@ It supports both transactional operations and analytical insights.
 
 ---
 
-# 📌 Overview
+## 📌 Overview
 
 This project showcases how to build a backend system from scratch without relying on external CRM tools.
 
@@ -24,7 +24,7 @@ REST API development
 
 ---
 
-# 🏗️ Architecture
+## 🏗️ Architecture
 CSV Data
    ↓
 Python ETL (cleaning & validation)
@@ -37,7 +37,7 @@ FastAPI REST API
 
 ---
 
-# ⚙️ Tech Stack
+## ⚙️ Tech Stack
 Python
 SQLite
 SQL
@@ -47,7 +47,7 @@ Pydantic
 
 ---
 
-# 🔑 Key Features
+## 🔑 Key Features
 CSV ingestion and cleaning pipeline (Pandas + Python)
 Data validation and deduplication
 Normalized relational schema with:
@@ -59,7 +59,7 @@ SQL-based analytics exposed via API endpoints
 
 ---
 
-# 🗄️ Data Pipeline (ETL)
+## 🗄️ Data Pipeline (ETL)
 
 The ETL layer:
 
@@ -74,7 +74,7 @@ python3 python/load_to_db.py
 ```
 
 ---
-# 🧱 Database Layer
+## 🧱 Database Layer
 SQLite relational database
 Normalized schema for accounts and contacts
 Indexed columns for faster queries
@@ -84,7 +84,7 @@ python3 python/migrate_schema.py
 ```
 ---
 
-# 📊 Analytics Layer
+## 📊 Analytics Layer
 
 Analytics are implemented using SQL views.
 
@@ -98,7 +98,7 @@ python3 python/create_views.py
 ```
 ---
 
-# 🌐 API Layer (FastAPI)
+## 🌐 API Layer (FastAPI)
 
 The API exposes both core CRM operations and analytics endpoints.
 
@@ -106,14 +106,14 @@ The API exposes both core CRM operations and analytics endpoints.
 ```
 uvicorn api.main:app --reload
 ```
-
-📄 Interactive Docs
+---
+## 📄 Interactive Docs
 ```
 http://127.0.0.1:8000/docs
 ```
 ---
 
-# 📡 API Endpoints
+## 📡 API Endpoints
 🔹 Core Endpoints
 ```
 GET    /accounts
@@ -170,9 +170,9 @@ SQL-based analytics
 
 Built without external CRM tools to reflect real engineering workflows.
 ---
-# 👤 Author
+## 👤 Author
 
-## Tumelo Sethosa
+### Tumelo Sethosa
 
 ---
 ⭐ If you like this project
